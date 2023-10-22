@@ -4,8 +4,8 @@ const form = document.querySelector(`.feedback-form`);
 
 const dateInLS = localStorage.getItem(`feedback-form-state`);
 
-form.elements.email.value = JSON.parse(dateInLS).email;
-form.elements.message.value = JSON.parse(dateInLS).message;
+form.elements.email.value = JSON.parse(dateInLS).email || ``;
+form.elements.message.value = JSON.parse(dateInLS).message || ``;
 
 form.addEventListener(`submit`, handlerSubmit);
 
@@ -25,7 +25,7 @@ function handlerInput(evt) {
 };
 function handlerSubmit(evt) {
     evt.preventDefault();
-    // console.log(dateInLS);
+    console.log(dateInLS);
     localStorage.clear();
 }
 
