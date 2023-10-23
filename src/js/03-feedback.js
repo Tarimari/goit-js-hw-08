@@ -18,10 +18,7 @@ else
 
 form.addEventListener(`submit`, handlerSubmit);
 
-form.addEventListener(`input`, throttle(handlerInput, 500, {
-      leading: true,
-      trailing: false,
-    }));
+form.addEventListener(`input`, throttle(handlerInput, 500));
 
 function handlerInput(evt) {
     let text = {
@@ -34,7 +31,7 @@ function handlerInput(evt) {
 }
 function handlerSubmit(evt) {
     evt.preventDefault();
-    console.log(dateInLS);
+    console.log(localStorage.getItem(`feedback-form-state`));
     localStorage.clear();
     form.elements.email.value = ``;
     form.elements.message.value = ``;
