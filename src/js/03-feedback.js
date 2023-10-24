@@ -38,5 +38,6 @@ function handlerSubmit(evt) {
     localStorage.clear();
     form.elements.email.value = ``;
     form.elements.message.value = ``;
+    
 }
 
